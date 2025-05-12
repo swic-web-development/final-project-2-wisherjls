@@ -1,16 +1,17 @@
 import Header from './components/header.jsx'
-import MovieGrid from './components/movie-grid'
+import PlanetsGrid from './components/planet-grid'
 import { useState, useEffect } from 'react'
 
 export default function App() {
-  const [movies, setMovies] = useState([])
+  const [planets, setPlanets] = useState([])
+
   useEffect(() => {
-    async function fetchMovies() {
-      const response = await fetch('https://ghibliapi.vercel.app/films/')
+    async function fetchPlanets() {
+      const response = await fetch('https://swapi.tech/api/planets/')
       const data = await response.json()
-      setMovies(data)
+      setPlanets(data.results)
     }
-    fetchMovies()
+    fetchPlanets()
   }, [])
 
   return (
@@ -19,7 +20,7 @@ export default function App() {
       className="flex min-h-screen flex-col items-center justify-center"
     >
       <Header />
-      <MovieGrid movies={movies} />
+      <PlanetsGrid planets={planets} />
     </main>
   )
 }
