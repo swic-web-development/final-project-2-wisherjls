@@ -14,7 +14,10 @@ export default function App() {
   }, [])
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center bg-gray-900 text-white">
+    <main
+      style={{ backgroundColor: '#136c68' }}
+      className="flex min-h-screen flex-col items-center justify-center"
+    >
       <Header />
       <MovieGrid movies={movies} />
     </main>
