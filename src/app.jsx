@@ -8,7 +8,7 @@ export default function App() {
     async function fetchMovies() {
       const response = await fetch('https://ghibliapi.vercel.app/films/')
       const data = await response.json()
-      setMovies(data.results)
+      setMovies(data)
     }
     fetchMovies()
   }, [])

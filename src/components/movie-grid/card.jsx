@@ -1,5 +1,5 @@
 // Render a single movie card.
-//used ai to speed things up
+//used ai to speed things
 export default function Card({ movie }) {
   const {
     title,
